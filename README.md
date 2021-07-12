@@ -1,4 +1,4 @@
-# youtube-controlled-pwm
+# youtube-controled-pwm
 A program to controll a pwm pin on a raspberry pi based on a youtube livestream's comments
 
 # Installation instructions:
@@ -8,7 +8,7 @@ pip3 install pytchat
 
 cd /home/pi/Desktop
 
-wget https://raw.githubusercontent.com/kittycat959/youtube-controlled-pwm/main/program.py
+wget https://raw.githubusercontent.com/kittycat959/youtube-controled-pwm/main/program.py
 
 # Running the program:
 Before running the program there are a few lines that must be configured to tell the program about your setup, these lines are on line number 11 through to line number 16, the program will have been saved to the desktop so you can simply double click on the file to open it or you can type "nano /home/pi/Desktop/program.py" without the quotes to open it in the terminal, if you descide to do this press control, then y then enter twice in order to save the changes you have made.
