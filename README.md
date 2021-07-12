@@ -25,6 +25,6 @@ resonance_percentage is the percentage dutycycle to start the resonance control 
 
 time_for_filter_change is the interval in seconds between cv updates
 
-video_url is the video url of the live stream and it must be but between the apostrophes
+video_url is the video url of the live stream and ***it must be but between the apostrophes***
 
 After all these lines have been updated and saved you can run the program by typing python3 /home/pi/Desktop/program.py
