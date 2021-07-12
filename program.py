@@ -12,19 +12,19 @@ pin_to_use_filter = 40 #the gpio pin number to output the pwm signal on for the 
 pin_to_use_resonance = 38 #the gpio pin number to output the pwm signal on for the resonance control coltage
 filter_percentage = 100 #the duty cycle of the pin connected to the filter control voltage
 resonance_percentage = 0 #the duty cycle of the pin connected to the resonance control voltage
-time_for_filter_change = 1 #the amount of time in seconds between filter changes
+time_for_filter_change = 10 #the amount of time in seconds between filter changes
 video_url = "" #the url of the video to check the chat on (put it between the apostaphies)
 
 def pwm(time_for_filter_change): #defines the pwm function with the argument time_for_filter_change
     #this section sets up the first gpio pin for the filter cv
     GPIO.setmode(GPIO.BOARD) 
     GPIO.setup(pin_to_use_filter, GPIO.OUT)
-    filter_pwm = GPIO.PWM(pin_to_use_filter, 8000)
+    filter_pwm = GPIO.PWM(pin_to_use_filter, 500)
     filter_pwm.start(filter_percentage)
 
     #this section sets up the second gpio pin for the resonance cv
     GPIO.setup(pin_to_use_resonance, GPIO.OUT)
-    resonance_pwm = GPIO.PWM(pin_to_use_resonance, 8000)
+    resonance_pwm = GPIO.PWM(pin_to_use_resonance, 500)
     resonance_pwm.start(resonance_percentage)
 
     #updates the dutycycle of the two pwm pins with the delay defines in time_for_filter_change
@@ -48,7 +48,6 @@ def message_retriever(video_url): #defines the message_retriever function with t
     while chat.is_alive():
         for c in chat.get().sync_items():
             message = f"{c.message}"
-            print(message)
 
             #this section preforms a series of checks to validate the input from the chat for the filter percentage
             if len(message) > 7 and len(message) < 11:
