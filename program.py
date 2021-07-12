@@ -30,8 +30,8 @@ def pwm(time_for_filter_change): #defines the pwm function with the argument tim
     #updates the dutycycle of the two pwm pins with the delay defines in time_for_filter_change
     while True:
         print(filter_percentage)
-        #filter_pwm.ChangeDutyCycle(filter_percentage)
-        #resonance_pwm.ChangeDutyCycle(resonance_percentage)
+        filter_pwm.ChangeDutyCycle(filter_percentage)
+        resonance_pwm.ChangeDutyCycle(resonance_percentage)
         time.sleep(time_for_filter_change)
 
 #creates and starts a thread for the pwm function to ensure there are no drop outs when we read the messages
@@ -59,9 +59,9 @@ def message_retriever(video_url): #defines the message_retriever function with t
 
             #this section preforms a series of checks to validate the input from the chat for the resonance percentage
             if len(message) > 10 and len(message) < 14:
-                if message[0:11] == "resonance ":
-                    if message[11:len(message)].isdigit():
-                        if int(message[11:len(message)]) < 101:
-                            resonance_percentage = int(message[11:len(message)])
+                if message[0:10] == "resonance ":
+                    if message[10:len(message)].isdigit():
+                        if int(message[10:len(message)]) < 101:
+                            resonance_percentage = int(message[10:len(message)])
             
 message_retriever(video_url) #calls the message_retriever function with the argument video_url
