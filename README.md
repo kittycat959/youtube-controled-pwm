@@ -15,16 +15,16 @@ Before running the program there are a few lines that must be configured to tell
 
 ### The lines that may need chaning are below allong with what they are used for:
 
-pin_to_use_filter tells the program what pin to use to output its control voltage for the filter
+* pin_to_use_filter tells the program what pin to use to output its control voltage for the filter
 
-pin_to_use_resonance tells the program what pin to use to ouptut its control voltage for the resonance
+* pin_to_use_resonance tells the program what pin to use to ouptut its control voltage for the resonance
 
-filter_percentage is the percentage dutycycle to start the filter control voltage on
+* filter_percentage is the percentage dutycycle to start the filter control voltage on
 
-resonance_percentage is the percentage dutycycle to start the resonance control voltage on
+* resonance_percentage is the percentage dutycycle to start the resonance control voltage on
 
-time_for_filter_change is the interval in seconds between cv updates
+* time_for_filter_change is the interval in seconds between cv updates
 
-video_url is the video url of the live stream and ***it must be but between the apostrophes***
+* video_url is the video url of the live stream and ***it must be but between the apostrophes***
 
 After all these lines have been updated and saved you can run the program by typing python3 /home/pi/Desktop/program.py
